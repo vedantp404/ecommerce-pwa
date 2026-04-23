@@ -1,20 +1,203 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>E-commerce Store</title>
-  <link rel="manifest" href="manifest.json">
-</head>
-<body>
-  <h1>Welcome to My E-commerce Store</h1>
-  <p>Products available online.</p>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Commerce Store</title>
 
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-      .then(() => console.log("Service Worker Registered"));
-    }
-  </script>
+<link rel="manifest" href="manifest.json">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#f5f7fa;
+color:#222;
+}
+
+header{
+background:#111827;
+color:white;
+padding:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+}
+
+header h1{
+font-size:28px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-size:16px;
+}
+
+.hero{
+background:linear-gradient(to right,#2563eb,#7c3aed);
+color:white;
+padding:60px 20px;
+text-align:center;
+}
+
+.hero h2{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:20px;
+}
+
+.hero button{
+padding:12px 25px;
+border:none;
+background:white;
+color:#2563eb;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+}
+
+.products{
+padding:40px 20px;
+}
+
+.products h2{
+text-align:center;
+margin-bottom:30px;
+font-size:32px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:14px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.card h3{
+margin:12px 0;
+}
+
+.price{
+color:#2563eb;
+font-size:22px;
+font-weight:bold;
+margin-bottom:12px;
+}
+
+.card button{
+padding:10px 18px;
+border:none;
+background:#2563eb;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+
+footer{
+background:#111827;
+color:white;
+text-align:center;
+padding:18px;
+margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>ShopEasy</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#">Products</a>
+<a href="#">Cart</a>
+<a href="#">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Big Sale is Live</h2>
+<p>Best Gadgets at Lowest Prices</p>
+<button>Shop Now</button>
+</section>
+
+<section class="products">
+<h2>Featured Products</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500" alt="">
+<h3>Smartphone</h3>
+<p class="price">₹19,999</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="">
+<h3>Headphones</h3>
+<p class="price">₹2,499</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500" alt="">
+<h3>Smart Watch</h3>
+<p class="price">₹3,999</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=500" alt="">
+<h3>Laptop</h3>
+<p class="price">₹54,999</p>
+<button>Add to Cart</button>
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 ShopEasy | E-Commerce PWA</p>
+</footer>
+
+<script>
+if('serviceWorker' in navigator){
+navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+
 </body>
 </html>
